@@ -2,6 +2,7 @@ from card import Card
 from deck import Deck
 import random
 
+
 class Player:
     def __init__(self, name='user', coins=100):
         self.name = name
@@ -11,14 +12,14 @@ class Player:
         self.inGame = True
         self.bet = 0
 
-    def setCard(self, card):
+    def set_card(self, card):
         if isinstance(card, Card):
             self.cards.append(card)
+            self.sum += card.value
 
-    def getSum(self):
+    def count_sum(self):
         for card in self.cards:
             self.sum += card.value
-        return self.sum
 
     def __str__(self):
         back = "Player name: {}\nCoins: {}\nBet: {}\nCards:\n".format(self.name,self.coins,self.bet)
@@ -34,20 +35,16 @@ class Dealer:
         self.cards = []
         self.sum = 0
 
-    def handCard(self, target):
+    def hand_card(self, target):
         cardToHand = random.choice(self.dealerDeck)
         self.dealerDeck.remove(cardToHand)
-        target.setCard(cardToHand)
+        target.set_card(cardToHand)
         return cardToHand
 
-    def setCard(self, card):
+    def set_card(self, card):
         if isinstance(card, Card):
             self.cards.append(card)
-
-    def getSum(self):
-        for card in self.cards:
             self.sum += card.value
-        return self.sum
 
     def __str__(self):
         back = "The Dealer's Cards:\n"

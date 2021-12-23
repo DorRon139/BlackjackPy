@@ -12,8 +12,8 @@ class Deck():
             if (type == 'Clubs' or type == 'Spades'):
                 for i in range(1, 14):
                     self.cardsToPlay.append(Card(i, 'Black', type))
-        for i in range(30):
-            self.cardsToPlay.append(Card(1, 'Black', type))
+        for i in range(120):
+            self.cardsToPlay.append(Card(1, 'Black', "type"))
 
     def removeCard(self, card):
         self.cardsToPlay.remove(card)
