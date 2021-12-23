@@ -7,7 +7,7 @@ class Player:
         self.name = name
         self.coins = coins
         self.cards = []
-        self.sum = self.getSum()
+        self.sum = 0
         self.inGame = True
         self.bet = 0
 
@@ -32,7 +32,7 @@ class Dealer:
     def __init__(self):
         self.dealerDeck = Deck().cardsToPlay
         self.cards = []
-        self.sum = self.getSum()
+        self.sum = 0
 
     def handCard(self, target):
         cardToHand = random.choice(self.dealerDeck)

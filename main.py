@@ -1,7 +1,6 @@
 from game import *
 from participants import Player
 
-
 p = Player('Dor', 100)
 p2 = Player('Hadar', 100)
 p3 = Player('Shlomi', 125)
